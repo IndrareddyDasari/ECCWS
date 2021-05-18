@@ -34,9 +34,13 @@ public class Test {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("window.scrollBy(0,800)", "");
 				Thread.sleep(2000);
-				//driver.findElement(By.xpath("/html/body/div[3]/section[2]/div")).click();
+				driver.findElement(By.xpath("//*[@class='area-of-interest-list position-list']")).click();
+				Thread.sleep(3000);
+				//driver.findElement(By.xpath("//*[@id='credentials_503']")).click();
+				WebElement ele = driver.findElement(By.id("credentials_503"));
 				
-				driver.findElement(By.cssSelector(".alphabetical-series > ul:nth-child(1) > li:nth-child(8)")).click();
+				js.executeScript("arguments[0].click();", ele);
+				js.executeScript("arguments[0].click();",driver.findElement(By.cssSelector(".alphabetical-series > ul:nth-child(1) > li:nth-child(8)")));
 				
 				//WebElement program = driver.findElement(By.cssSelector("tr.main-table-row:nth-child(1) > td:nth-child(1)"));
 				
